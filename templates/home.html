@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to the Home Page</h1>
+    <div class="login">
+        <h1>Student Exam Performance Indicator</h1>
+        <form action="{{url_for('predict_datapoint')}}" method="post">
+            <div class="mb-3">
+                <label class="form-label">Gender</label>
+                <select class="form-control" name="gender" placeholder="Enter your gender" required >
+                    <option class="placeholder" selected disabled value>Select your gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Race or ethnicity</label>
+                <select class="form-control" name="race" placeholder="Enter your race or ethnicity" required >
+                    <option class="placeholder" selected disabled value>Select your race or ethnicity</option>
+                    <option value="group_A">Group A</option>
+                    <option value="group_B">Group B</option>
+                    <option value="group_C">Group C</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Parental level of education</label>
+                <select class="form-control" name="parental_level_of_education" placeholder="Enter your parental level of education" required >
+                    <option class="placeholder" selected disabled value>Select your parental level of education</option>
+                    <option value="some_high_school">Some high school</option>
+                    <option value="high_school">High school</option>
+                    <option value="some_college">Some college</option>
+                    <option value="associate's_degree">Associate's degree</option>
+                    <option value="bachelor's_degree">Bachelor's degree</option>
+                    <option value="master's_degree">Master's degree</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Lunch</label>
+                <select class="form-control" name="lunch" placeholder="Enter your lunch type" required >
+                    <option class="placeholder" selected disabled value>Select your lunch type</option>
+                    <option value="standard">Standard</option>
+                    <option value="free/reduced">Free/reduced</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Test preparation course</label>
+                <select class="form-control" name="test_preparation_course" placeholder="Enter your test preparation course" required >
+                    <option class="placeholder" selected disabled value>Select your test preparation course</option>
+                    <option value="none">None</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Math score</label>
+                <input type="number" class="form-control" name="math_score" placeholder="Enter your math score" required >
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Reading score</label>
+                <input type="number" class="form-control" name="reading_score" placeholder="Enter your reading score" required >
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Writing score</label>
+                <input type="number" class="form-control" name="writing_score" placeholder="Enter your writing score" required >
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <h2>
+        the prediction is : {{results}}
+    </h2>
+</body>
+</html>
